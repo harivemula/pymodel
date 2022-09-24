@@ -1,7 +1,7 @@
 uvicorn
 fastapi
-#pandas
-#numpy
+pandas
+numpy
 joblib
 pydantic
 sklearn
