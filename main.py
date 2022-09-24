@@ -12,5 +12,5 @@ def predict_model (sl: float, sw: float, pl: float, pw: float):
     #df = pd.DataFrame(data=input, columns=feature_names)
     model = load(os.path.join('./models', 'iris-sv-model'))
     print(model)
-    pred = model([[sl, sw, pl, pw]])
+    pred = model.predict([[sl, sw, pl, pw]])
     return {'species': int(pred[0])}
