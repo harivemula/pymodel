@@ -8,7 +8,7 @@ feature_names = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', '
 target_names = ['setosa', 'versicolor', 'virginica']
 @app.get("/predict")
 def predict_model (sl: float, sw: float, pl: float, pw: float):
-    input = np.array([sl, sw, pl, pw])
+    input = np.array([[sl, sw, pl, pw]])
     df = pd.DataFrame(data=input, columns=feature_names)
     model = load('./models/iris-sv-model')
     print(model)
