@@ -4,7 +4,8 @@ from fastapi import FastAPI
 from joblib import load
 
 app = FastAPI()
-
+#feature_names = ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+target_names = ['setosa', 'versicolor', 'virginica']
 @app.get("/predict")
 def predict_model (sl: float, sw: float, pl: float, pw: float):
     #input = np.array([iobj.sl, iobj.sw, iobj.pl, iobj.pw])
@@ -12,4 +13,4 @@ def predict_model (sl: float, sw: float, pl: float, pw: float):
     model = load('./models/iris-sv-model')
     print(model)
     pred = model.predict([[sl, sw, pl, pw]])
-    return {'species': int(pred[0])}
+    return {'species': target_names[int(pred[0])]}
