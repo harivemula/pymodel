@@ -1,6 +1,6 @@
 #import numpy as np
 #import pandas as pd
-import fastapi as FastAPI
+from fastapi import FastAPI
 from joblib import load
 
 app = FastAPI()
